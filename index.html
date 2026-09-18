@@ -3,79 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2026 全國技專校院學生實務專題製作競賽</title>
+    <title>2026 全國技專校院學生實務專題製作競賽 - 南臺科技大學</title>
     <style>
         /* 全局設定 */
         body, html {
             margin: 0; padding: 0; width: 100%;
             font-family: 'Microsoft JhengHei', 'Noto Sans TC', sans-serif;
-            background-color: #f8f9fa; color: #333;
+            background-color: #f4f6f9; color: #333;
         }
         
-        /* 導覽列 */
-        .header { background-color: #06356a; width: 100%; position: sticky; top: 0; z-index: 1000; }
+        /* 導覽列 (南臺專屬配色：深藍色底) */
+        .header { background-color: #003366; width: 100%; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
         .header-content {
             max-width: 1200px; margin: 0 auto; display: flex;
             justify-content: space-between; align-items: center; padding: 15px 20px;
         }
-        .logo-title { color: white; font-size: 20px; font-weight: bold; display: flex; align-items: center; }
-        .nav-links a { color: white; text-decoration: none; margin-left: 20px; font-size: 15px; transition: 0.2s; }
-        .nav-links a:hover { color: #ffcc00; }
+        .logo-title { color: white; font-size: 22px; font-weight: bold; display: flex; align-items: center; letter-spacing: 1px; }
+        .logo-title span { font-size: 16px; font-weight: normal; margin-left: 10px; padding-left: 10px; border-left: 1px solid rgba(255,255,255,0.5); }
+        .nav-links a { color: white; text-decoration: none; margin-left: 20px; font-size: 15px; transition: 0.2s; font-weight: 500; }
+        .nav-links a:hover { color: #f39c12; }
 
         /* 主視覺區塊 */
         .hero {
-            width: 100%; height: 50vh; min-height: 400px;
-            background: linear-gradient(rgba(4,38,77,0.7), rgba(4,38,77,0.7)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070') center/cover;
+            width: 100%; height: 50vh; min-height: 450px;
+            background: linear-gradient(rgba(0, 51, 102, 0.75), rgba(0, 51, 102, 0.75)), url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=2070') center/cover;
             display: flex; flex-direction: column; align-items: center; justify-content: center;
             text-align: center; color: white; padding: 20px; box-sizing: border-box;
         }
-        .hero h1 { font-size: 2.5rem; margin-bottom: 10px; text-shadow: 2px 2px 5px rgba(0,0,0,0.5); }
-        .hero p { font-size: 1.2rem; margin-bottom: 30px; }
+        .hero h1 { font-size: 2.8rem; margin-bottom: 15px; text-shadow: 2px 2px 5px rgba(0,0,0,0.6); letter-spacing: 2px; }
+        .hero p { font-size: 1.3rem; margin-bottom: 35px; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
         .btn {
-            background-color: #e62b1e; color: white; padding: 12px 30px;
-            text-decoration: none; font-size: 1.1rem; border-radius: 30px; font-weight: bold;
-            transition: 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-            border: none; cursor: pointer;
+            background-color: #e74c3c; color: white; padding: 14px 35px;
+            text-decoration: none; font-size: 1.1rem; border-radius: 4px; font-weight: bold;
+            transition: 0.3s; border: none; cursor: pointer; letter-spacing: 1px;
         }
-        .btn:hover { background-color: #c92216; transform: translateY(-2px); }
+        .btn:hover { background-color: #c0392b; transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
 
         /* 內容區塊共用 */
-        .container { max-width: 1000px; margin: 50px auto; padding: 0 20px; }
-        .section-title { text-align: center; color: #06356a; font-size: 24px; margin-bottom: 30px; }
-        .section-title span { border-bottom: 3px solid #e62b1e; padding-bottom: 8px; }
+        .container { max-width: 1000px; margin: 60px auto; padding: 0 20px; }
+        .section-title { text-align: center; color: #003366; font-size: 28px; margin-bottom: 40px; font-weight: bold; }
+        .section-title span { border-bottom: 4px solid #e74c3c; padding-bottom: 10px; display: inline-block; }
 
         /* 公告清單 */
-        .news-box { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-bottom: 50px; }
-        .news-item { display: flex; padding: 15px 0; border-bottom: 1px solid #eee; align-items: center; }
+        .news-box { background: white; padding: 0; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 50px; overflow: hidden; }
+        .news-item { display: flex; padding: 20px 30px; border-bottom: 1px solid #eee; align-items: center; transition: background-color 0.2s; }
+        .news-item:hover { background-color: #f9fbff; }
         .news-item:last-child { border-bottom: none; }
-        .news-date { color: #06356a; font-weight: bold; width: 120px; }
-        .news-tag { background: #e62b1e; color: white; padding: 3px 8px; border-radius: 4px; font-size: 12px; margin-right: 15px; }
-        .news-title { color: #444; text-decoration: none; flex: 1; }
-        .news-title:hover { color: #e62b1e; }
+        .news-date { color: #555; font-weight: bold; width: 120px; font-size: 15px; }
+        .news-tag { background: #e74c3c; color: white; padding: 4px 10px; border-radius: 4px; font-size: 13px; margin-right: 20px; letter-spacing: 1px; }
+        .news-title { color: #2c3e50; text-decoration: none; flex: 1; font-size: 16px; font-weight: 500; }
+        .news-title:hover { color: #e74c3c; }
 
         /* 報名表單區塊 */
-        .form-box { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; margin-bottom: 8px; font-weight: bold; color: #06356a; }
+        .form-box { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .form-group { margin-bottom: 25px; }
+        .form-group label { display: block; margin-bottom: 10px; font-weight: bold; color: #2c3e50; }
         .form-group input, .form-group select { 
-            width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; 
-            font-size: 16px; box-sizing: border-box; font-family: inherit;
+            width: 100%; padding: 12px; border: 1px solid #dcdde1; border-radius: 4px; 
+            font-size: 16px; box-sizing: border-box; font-family: inherit; transition: border-color 0.3s;
         }
-        .form-group input:focus { border-color: #06356a; outline: none; }
-        .submit-wrapper { text-align: center; margin-top: 30px; }
+        .form-group input:focus, .form-group select:focus { border-color: #003366; outline: none; }
+        .submit-wrapper { text-align: center; margin-top: 40px; }
 
         /* 頁尾 */
-        .footer { background-color: #222; color: #aaa; text-align: center; padding: 40px 20px; font-size: 14px; margin-top: 50px; }
+        .footer { background-color: #1a1a1a; color: #999; text-align: center; padding: 50px 20px; font-size: 15px; margin-top: 60px; line-height: 1.8; }
         .footer p { margin: 5px 0; }
-        .footer .highlight { color: white; }
+        .footer .highlight { color: #fff; font-weight: bold; }
+        
+        /* 單位專屬標誌區塊 */
+        .unit-info { margin-bottom: 20px; font-size: 18px; color: #fff; }
 
         /* 手機版 RWD 調整 */
         @media (max-width: 768px) {
             .nav-links { display: none; }
-            .hero h1 { font-size: 1.8rem; }
-            .news-item { flex-direction: column; align-items: flex-start; }
-            .news-date, .news-tag { margin-bottom: 8px; }
-            .form-box { padding: 20px; }
+            .logo-title span { display: none; } /* 手機版隱藏副標題保持空間 */
+            .hero h1 { font-size: 2rem; }
+            .news-item { flex-direction: column; align-items: flex-start; padding: 20px; }
+            .news-date, .news-tag { margin-bottom: 10px; }
+            .news-tag { margin-right: 0; }
+            .form-box { padding: 25px; }
         }
     </style>
 </head>
@@ -84,11 +90,13 @@
     <!-- 導覽列 -->
     <header class="header">
         <div class="header-content">
-            <div class="logo-title">全國實務專題製作競賽</div>
+            <div class="logo-title">
+                南臺科技大學 <span>校務研究暨永續發展推動中心</span>
+            </div>
             <nav class="nav-links">
                 <a href="#home">首頁</a>
                 <a href="#news">最新公告</a>
-                <a href="#register">線上報名</a>
+                <a href="#register">競賽報名</a>
                 <a href="#contact">聯絡我們</a>
             </nav>
         </div>
@@ -96,9 +104,9 @@
 
     <!-- 主視覺 -->
     <section class="hero" id="home">
-        <h1>2026 全國技專校院<br>學生實務專題製作競賽暨成果展</h1>
+        <h1>2026 全國技專校院學生實務專題製作競賽</h1>
         <p>發揮創意、實務創新，展現技職教育軟實力</p>
-        <a href="#register" class="btn">立即填寫報名資料</a>
+        <a href="#register" class="btn">立即前往報名</a>
     </section>
 
     <!-- 最新公告 -->
@@ -106,14 +114,19 @@
         <h2 class="section-title"><span>最新公告</span></h2>
         <div class="news-box">
             <div class="news-item">
-                <div class="news-date">2026-08-20</div>
+                <div class="news-date">2026-09-18</div>
                 <div class="news-tag">重要</div>
-                <a href="#" class="news-title">【公告】線上報名系統已正式啟用，請各隊伍於期限內完成資料填寫</a>
+                <a href="#" class="news-title">【公告】2026全國技專校院學生實務專題製作競賽「報名須知」與「簡章」下載</a>
             </div>
             <div class="news-item">
-                <div class="news-date">2026-08-15</div>
+                <div class="news-date">2026-09-10</div>
                 <div class="news-tag">一般</div>
-                <a href="#" class="news-title">【提醒】報名須知與相關簡章請至檔案下載區獲取</a>
+                <a href="#" class="news-title">【提醒】報名系統已正式啟用，請各校隊伍於期限內完成資料填寫與附件上傳</a>
+            </div>
+            <div class="news-item">
+                <div class="news-date">2026-09-01</div>
+                <div class="news-tag">一般</div>
+                <a href="#" class="news-title">【活動】徵件說明會將於本週五舉行，歡迎各校師生踴躍報名參與</a>
             </div>
         </div>
     </section>
@@ -123,7 +136,7 @@
         <h2 class="section-title"><span>線上報名系統</span></h2>
         <div class="form-box">
             
-            <!-- 將 YOUR_API_ENDPOINT 替換為你的資料庫 API 網址 -->
+            <!-- 將下方 action 的網址替換為你的 Google Apps Script URL 或 Formspree 網址 -->
             <form action="YOUR_API_ENDPOINT" method="POST">
                 
                 <div class="form-group">
@@ -137,8 +150,10 @@
                         <option value="">請選擇參賽類群...</option>
                         <option value="A">機械與動力機械群</option>
                         <option value="B">電機與電子群</option>
-                        <option value="C">商業與管理群</option>
-                        <option value="D">設計群</option>
+                        <option value="C">化工材料群</option>
+                        <option value="D">土木與建築群</option>
+                        <option value="E">商業與管理群</option>
+                        <option value="F">設計群</option>
                     </select>
                 </div>
 
@@ -167,9 +182,10 @@
 
     <!-- 官方頁尾 -->
     <footer class="footer" id="contact">
-        <p><span class="highlight">主辦單位：</span>教育部 ｜ <span class="highlight">協辦單位：</span>南臺科技大學 校務研究暨永續發展推動中心</p>
-        <p>聯絡信箱：example@stust.edu.tw ｜ 聯絡電話：06-2533131 分機 1401-1402</p>
-        <p>&copy; 2026 全國技專校院學生實務專題製作競賽. All Rights Reserved.</p>
+        <div class="unit-info">南臺科技大學 校務研究暨永續發展推動中心</div>
+        <p><span class="highlight">主辦單位：</span>教育部 ｜ <span class="highlight">承辦單位：</span>南臺科技大學</p>
+        <p>聯絡信箱：cirsd@stust.edu.tw ｜ 聯絡電話：(06) 253-3131 分機：1401 - 1402</p>
+        <p>&copy; 2026 南臺科技大學 校務研究暨永續發展推動中心. All Rights Reserved.</p>
     </footer>
 
 </body>
