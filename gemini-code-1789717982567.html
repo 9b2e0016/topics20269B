@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 全國技專校院學生實務專題製作競賽</title>
+    <style>
+        /* 全局設定 */
+        body, html {
+            margin: 0; padding: 0; width: 100%;
+            font-family: 'Microsoft JhengHei', 'Noto Sans TC', sans-serif;
+            background-color: #f8f9fa; color: #333;
+        }
+        
+        /* 導覽列 */
+        .header { background-color: #06356a; width: 100%; position: sticky; top: 0; z-index: 1000; }
+        .header-content {
+            max-width: 1200px; margin: 0 auto; display: flex;
+            justify-content: space-between; align-items: center; padding: 15px 20px;
+        }
+        .logo-title { color: white; font-size: 20px; font-weight: bold; display: flex; align-items: center; }
+        .nav-links a { color: white; text-decoration: none; margin-left: 20px; font-size: 15px; transition: 0.2s; }
+        .nav-links a:hover { color: #ffcc00; }
+
+        /* 主視覺區塊 */
+        .hero {
+            width: 100%; height: 50vh; min-height: 400px;
+            background: linear-gradient(rgba(4,38,77,0.7), rgba(4,38,77,0.7)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070') center/cover;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            text-align: center; color: white; padding: 20px; box-sizing: border-box;
+        }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 10px; text-shadow: 2px 2px 5px rgba(0,0,0,0.5); }
+        .hero p { font-size: 1.2rem; margin-bottom: 30px; }
+        .btn {
+            background-color: #e62b1e; color: white; padding: 12px 30px;
+            text-decoration: none; font-size: 1.1rem; border-radius: 30px; font-weight: bold;
+            transition: 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            border: none; cursor: pointer;
+        }
+        .btn:hover { background-color: #c92216; transform: translateY(-2px); }
+
+        /* 內容區塊共用 */
+        .container { max-width: 1000px; margin: 50px auto; padding: 0 20px; }
+        .section-title { text-align: center; color: #06356a; font-size: 24px; margin-bottom: 30px; }
+        .section-title span { border-bottom: 3px solid #e62b1e; padding-bottom: 8px; }
+
+        /* 公告清單 */
+        .news-box { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-bottom: 50px; }
+        .news-item { display: flex; padding: 15px 0; border-bottom: 1px solid #eee; align-items: center; }
+        .news-item:last-child { border-bottom: none; }
+        .news-date { color: #06356a; font-weight: bold; width: 120px; }
+        .news-tag { background: #e62b1e; color: white; padding: 3px 8px; border-radius: 4px; font-size: 12px; margin-right: 15px; }
+        .news-title { color: #444; text-decoration: none; flex: 1; }
+        .news-title:hover { color: #e62b1e; }
+
+        /* 報名表單區塊 */
+        .form-box { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: bold; color: #06356a; }
+        .form-group input, .form-group select { 
+            width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; 
+            font-size: 16px; box-sizing: border-box; font-family: inherit;
+        }
+        .form-group input:focus { border-color: #06356a; outline: none; }
+        .submit-wrapper { text-align: center; margin-top: 30px; }
+
+        /* 頁尾 */
+        .footer { background-color: #222; color: #aaa; text-align: center; padding: 40px 20px; font-size: 14px; margin-top: 50px; }
+        .footer p { margin: 5px 0; }
+        .footer .highlight { color: white; }
+
+        /* 手機版 RWD 調整 */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 1.8rem; }
+            .news-item { flex-direction: column; align-items: flex-start; }
+            .news-date, .news-tag { margin-bottom: 8px; }
+            .form-box { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 導覽列 -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-title">全國實務專題製作競賽</div>
+            <nav class="nav-links">
+                <a href="#home">首頁</a>
+                <a href="#news">最新公告</a>
+                <a href="#register">線上報名</a>
+                <a href="#contact">聯絡我們</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主視覺 -->
+    <section class="hero" id="home">
+        <h1>2026 全國技專校院<br>學生實務專題製作競賽暨成果展</h1>
+        <p>發揮創意、實務創新，展現技職教育軟實力</p>
+        <a href="#register" class="btn">立即填寫報名資料</a>
+    </section>
+
+    <!-- 最新公告 -->
+    <section class="container" id="news">
+        <h2 class="section-title"><span>最新公告</span></h2>
+        <div class="news-box">
+            <div class="news-item">
+                <div class="news-date">2026-08-20</div>
+                <div class="news-tag">重要</div>
+                <a href="#" class="news-title">【公告】線上報名系統已正式啟用，請各隊伍於期限內完成資料填寫</a>
+            </div>
+            <div class="news-item">
+                <div class="news-date">2026-08-15</div>
+                <div class="news-tag">一般</div>
+                <a href="#" class="news-title">【提醒】報名須知與相關簡章請至檔案下載區獲取</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 線上報名系統 -->
+    <section class="container" id="register">
+        <h2 class="section-title"><span>線上報名系統</span></h2>
+        <div class="form-box">
+            
+            <!-- 將 YOUR_API_ENDPOINT 替換為你的資料庫 API 網址 -->
+            <form action="YOUR_API_ENDPOINT" method="POST">
+                
+                <div class="form-group">
+                    <label for="school">就讀學校</label>
+                    <input type="text" id="school" name="school" placeholder="例如：南臺科技大學" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="category">參賽類群</label>
+                    <select id="category" name="category" required>
+                        <option value="">請選擇參賽類群...</option>
+                        <option value="A">機械與動力機械群</option>
+                        <option value="B">電機與電子群</option>
+                        <option value="C">商業與管理群</option>
+                        <option value="D">設計群</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="projectName">專題作品名稱</label>
+                    <input type="text" id="projectName" name="projectName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="leaderName">隊長姓名</label>
+                    <input type="text" id="leaderName" name="leaderName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">聯絡信箱 (Email)</label>
+                    <input type="email" id="email" name="email" placeholder="後續競賽通知將寄至此信箱" required>
+                </div>
+
+                <div class="submit-wrapper">
+                    <button type="submit" class="btn">送出報名資料</button>
+                </div>
+
+            </form>
+        </div>
+    </section>
+
+    <!-- 官方頁尾 -->
+    <footer class="footer" id="contact">
+        <p><span class="highlight">主辦單位：</span>教育部 ｜ <span class="highlight">協辦單位：</span>南臺科技大學 校務發展推動中心</p>
+        <p>聯絡信箱：example@stust.edu.tw ｜ 聯絡電話：06-2533131 分機 xxxx</p>
+        <p>&copy; 2026 全國技專校院學生實務專題製作競賽. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
